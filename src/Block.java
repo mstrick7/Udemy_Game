@@ -11,12 +11,16 @@ public class Block extends Rectangle {
 	Image pic;
 	boolean destroyed;
 	
-	int posX,posY;
-	int width,height;
+	int movX,movY;
+
 	
 	Block(int x, int y, int w, int h, String s){
-		this.posX=x;
-		this.posY=y;
+		
+		this.x=x;
+		this.y=y;
+		
+		movX = 2;
+		movY = 2;
 		
 		this.width=w;
 		this.height=h;
@@ -33,7 +37,7 @@ public class Block extends Rectangle {
 	
 	public void draw(Graphics g, Component c) {
 		if(!destroyed)
-			g.drawImage(pic, posX, posY, width, height, c);
+			g.drawImage(pic, x, y, width, height, c);
 	}
 
 }
